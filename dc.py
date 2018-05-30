@@ -2,6 +2,7 @@ import shutil
 import logging
 from hurry.filesize import size
 import os
+import smart_state_check
 import sys
 
 logging.basicConfig(level=logging.INFO)
@@ -15,6 +16,7 @@ def main():
     for folder in os.listdir("//Volumes"):
         drive_stats("//Volumes//" + folder, free_space_minimum)
 
+    smart_state_check.main()
 
 def drive_stats(drive_to_check, free_space_minimum):
 
